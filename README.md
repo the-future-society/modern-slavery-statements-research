@@ -23,13 +23,20 @@ The bucket contains multiple copies of statements from various scraping runs so 
 As it's work in progress, at present, if you'd like to work with this data, please send an email to edgar@bravetech.io with your github account and a link to a social profile (linkedin, github, facebook, VK or similar ) and you'll receive IAM user credentials on the first possible instance that would allow you to download and access the data.
 
 
-
-## Examples
-
-
-
 ## Get Help
 If you'd like to get help with domain expertise or technical requirements and implementations then get in touch with [Adriana](mailto:adriana.bora@thefuturesociety.org) or [Edgar](mailto:edgar@bravetech.io) respectively.
+
+
+## Roadmap
+
+Over the next few weeks and months, the following improvements are planned to the dataset and the repository:
+
+1. Provide a convenient one-command entry point to the data, including download to a pandas dataframe.
+2. Improve the dataset quality by continuously including more documents and improving the data cleaning pipeline.
+3. Provide examples of analysis.
+4. Provide manually annotaded labels for a subset of the corpus to enable analyses using supervised methods.
+5. Open source the data and research for public access. 
+
 
 
 ## Citation
