@@ -34,5 +34,9 @@ If you'd like to get help with domain expertise or technical requirements and im
 
 ## Citation
 
+If you intend to share any form of public research and analysis based on the data from this repository and the `modern-slavery-dataset-raw` and `modern-slavery-dataset-txt` buckets in AWS S3, then please include the following citation to your publication:
+
+
+The Future Society. (2020) Modern Slavery Statements Research. Retrieved from https://github.com/the-future-society/modern-slavery-statements-research.
 
 
