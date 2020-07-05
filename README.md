@@ -3,20 +3,24 @@
 This repository is going to contain a collection of experiments and analyses performed on the Modern Slavery Statements Dataset.
 
 
-## Context
-The UN Sustainable Development Goal 8.7 states:
-Take immediate and effective measures to eradicate forced labour, end modern slavery and human trafficking and secure the prohibition and elimination of the worst forms of child labour, including recruitment and use of child soldiers, and by 2025 end child labour in all its forms. [add link]
+## Introduction
+[The UN Sustainable Development Goal 8.7](https://sustainabledevelopment.un.org/sdg8) states:
+Take immediate and effective measures to eradicate forced labour, end modern slavery and human trafficking and secure the prohibition and elimination of the worst forms of child labour, including recruitment and use of child soldiers, and by 2025 end child labour in all its forms.
 
-In 2018, the Global Slavery Index found that there were 40.3 M people in modern slavery, of whom 25M were in forced labor producing computers, clothing, agricultural products, raw materials, etc and 15M were in forced marriage. [add link]
+In 2018, [the Global Slavery Index](https://www.globalslaveryindex.org/2018/findings/highlights/) found that there were 40.3 M people in modern slavery, of whom 25M were in forced labor producing computers, clothing, agricultural products, raw materials, etc and 15M were in forced marriage.
+
+[The Future Society](https://thefuturesociety.org/), an independent nonprofit think-and-do tank [launched a partnership](https://thefuturesociety.org/2020/06/23/project-aims-artificial-intelligence-against-modern-slavery/) with the [Walk Free Initiative](https://www.minderoo.org/walk-free/) to automate the analysis of modern slavery statements produced by businesses to boost compliance and help combat and eradicate modern slavery. [The team](https://thefuturesociety.org/our-team/) at The Future Society is curating an up-to-date repository of >16K modern slavery statements (and counting) to boost machine learning research in this area.
 
 By sharing your analysis and contributing to this repository you help the global community to hold multi-national corporations accountable for how they treat their workforce and suppliers.
 
 
 ## How to access the data?
 
-The data is available in the `modern-slavery-dataset-txt` bucket in AWS S3. The future plans involve releasing the dataset to the public as part of the AWS Open Data program [add link]. 
+The data is available in the `modern-slavery-dataset-txt` bucket in AWS S3. The future plans involve releasing the dataset to the public as part of the [AWS Open Data program](https://registry.opendata.aws/). 
 
-As it's work in progress, at present, if you'd like to work with this data, please send an email to edgar@bravetech.io with your name and a link to some social profile (linkedin, github, facebook, VK or similar ) and you'll receive IAM user credentials on the first possible instance that would allow you to download and access the data.
+The bucket contains multiple copies of statements from various scraping runs so the logic is to always pick the latest folder.  The raw documents are found in the `/data/raw_statements/` folder in the `modern-slavery-dataset-raw`  bucket. Metadata is found in `s3://modern-slavery-dataset-raw/data/ms_registry/` following the same logic.
+
+As it's work in progress, at present, if you'd like to work with this data, please send an email to edgar@bravetech.io with your github account and a link to a social profile (linkedin, github, facebook, VK or similar ) and you'll receive IAM user credentials on the first possible instance that would allow you to download and access the data.
 
 
 
