@@ -146,7 +146,7 @@ if __name__ == '__main__':
     parser.add_argument('--only_m', type=bool, help="Whether of not we want to output only metadatas" 
                                                     "and not all files, default=false",
                         default=False)
-    args = parser.parse_args('')
+    args = parser.parse_args()
 
     download(args.b, args.m, args.only_m, args.i, args.a)
 
