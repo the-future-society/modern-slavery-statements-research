@@ -20,7 +20,7 @@ The data is available in the `modern-slavery-dataset-txt` bucket in AWS S3. The 
 
 The bucket contains multiple copies of statements from various scraping runs so the logic is to always pick the latest folder.  The raw documents are found in the `/data/raw_statements/` folder in the `modern-slavery-dataset-raw`  bucket. Metadata is found in `s3://modern-slavery-dataset-raw/data/ms_registry/` following the same logic.
 
-As it's work in progress, at present, if you'd like to work with this data, please send an email to edgar@bravetech.io with your github account and a link to a social profile (linkedin, github, facebook, VK or similar ) and you'll receive IAM user credentials on the first possible instance that would allow you to download and access the data.
+As it's work in progress, at present, if you'd like to work with this data, please send an email to edgar@bravetech.io with a link to your social profile (linkedin, facebook or similar ) and you'll receive IAM user credentials on the first possible instance that would allow you to download and access the data.
 
 ### Quickstart
 
