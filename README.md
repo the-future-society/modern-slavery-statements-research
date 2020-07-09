@@ -16,7 +16,7 @@ By sharing your analysis and contributing to this repository you help the global
 
 ## How to access the data?
 
-The data is available in the `modern-slavery-dataset-txt` bucket in AWS S3. The future plans involve releasing the dataset to the public as part of the [AWS Open Data program](https://registry.opendata.aws/). 
+The data is available in the `modern-slavery-dataset-txt` bucket in AWS S3. The future plans involve releasing the dataset for the general public access.
 
 The bucket contains multiple copies of statements from various scraping runs so the logic is to always pick the latest folder.  The raw documents are found in the `/data/raw_statements/` folder in the `modern-slavery-dataset-raw`  bucket. Metadata is found in `s3://modern-slavery-dataset-raw/data/ms_registry/` following the same logic.
 
