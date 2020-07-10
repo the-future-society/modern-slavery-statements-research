@@ -78,3 +78,7 @@ If you intend to share any form of public research and analysis based on the dat
 The Future Society. (2020) Modern Slavery Statements Research. Retrieved from https://github.com/the-future-society/modern-slavery-statements-research.
 
 
+## Contributions
+
+Add Colab notebooks here.
+
