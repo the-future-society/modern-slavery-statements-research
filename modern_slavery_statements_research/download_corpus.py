@@ -2,10 +2,11 @@ import argparse
 import boto3
 from collections import defaultdict
 import pandas as pd
-from os import path, makedirs
+from os import path, makedirs, scandir, path
 from tqdm import tqdm
 import re
 import logging
+from itertools import chain
 
 
 logger = logging.getLogger(__name__)
@@ -130,6 +131,46 @@ def download(bucket_name='modern-slavery-dataset-txt', metadata_path='./metadata
     df.to_csv(metadata_path)
 
     logger.info("Download finished.")
+
+
+def transform(path_to_scraper_run_dir, output_format='pandas_dataframe'):
+    """
+    Takes a path to a directory of modern slavery statements in .txt format,
+    transforms them to a pandas dataframe then pickles and saves the dataframe
+    as 'ms_statements_pd.pkl'.
+    The pickled dataframe can be read in Python as follows:
+    df = pd.read_pickle('ms_statements_pd.pkl')
+        
+    Args:
+        path_to_scraper_run_dir (str): absolute or relative path to the
+            directory containing modern slavery statements as .txt files,
+            obtained by calling download()
+        format (str): format for saving the transformed statements.
+            Currrently, the default 'pandas_dataframe' is the only option.
+    """
+    assert path.isdir(path_to_scraper_run_dir), \
+        "{} is not a valid path to the directory scraper_run!".format(
+            path_to_scraper_run_dir
+        )
+    assert output_format == 'pandas_dataframe', \
+        "pandas_dataframe is currently the only supported output format"
+
+    data = []
+    with scandir(path_to_scraper_run_dir) as iterator:
+        for txt_file in tqdm(iterator):
+            assert txt_file.is_file()
+            assert txt_file.name.endswith(".txt")
+            with open(txt_file.path, encoding="utf8") as f:
+                words = list(chain.from_iterable(map(str.split, f)))
+                datum = {
+                    'url_id': txt_file.name.strip('.txt'),
+                    'word_count': int(len(words)),
+                    'contents': ' '.join(words) # remove commas from python list
+                }
+                data.append(datum)
+
+    df = pd.DataFrame(data)
+    df.to_pickle('ms_statements_pd.pkl')
 
 
 if __name__ == '__main__':
