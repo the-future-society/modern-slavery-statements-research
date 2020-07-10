@@ -2,7 +2,7 @@ import argparse
 import boto3
 from collections import defaultdict
 import pandas as pd
-from os import path, makedirs, scandir
+from os import path, makedirs, scandir, path
 from tqdm import tqdm
 import re
 import logging
@@ -148,6 +148,10 @@ def transform(path_to_scraper_run_dir, output_format='pandas_dataframe'):
         format (str): format for saving the transformed statements.
             Currrently, the default 'pandas_dataframe' is the only option.
     """
+    assert path.isdir(path_to_scraper_run_dir), \
+        "{} is not a valid path to the directory scraper_run!".format(
+            path_to_scraper_run_dir
+        )
     assert output_format == 'pandas_dataframe', \
         "pandas_dataframe is currently the only supported output format"
 
