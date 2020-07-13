@@ -82,4 +82,4 @@ The Future Society. (2020) Modern Slavery Statements Research. Retrieved from ht
 
 Add Colab notebooks here.
 
-- Rey Farhan's [initial exploration](https://colab.research.google.com/drive/1Xk3TZ-30CfNmUxxiDRrWh9S3nR74pZlj?usp=sharing).
+- Rey Farhan's [initial text data exploration and assumptions' check](https://colab.research.google.com/drive/1Xk3TZ-30CfNmUxxiDRrWh9S3nR74pZlj?usp=sharing).
