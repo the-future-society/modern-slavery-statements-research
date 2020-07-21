@@ -34,9 +34,9 @@ Copy [this notebook](https://github.com/the-future-society/modern-slavery-statem
 
 #### Option 2 - CLI
 
-Navigate to the project folder.
+Navigate to the project folder using the following command
 ```
-modern-slavery-statements-research/modern_slavery_statements_research
+cd modern-slavery-statements-research/modern_slavery_statements_research
 ```
 
 If you've set up your modern slavery project related [AWS CLI](https://aws.amazon.com/cli/) credentials as default you can simply run
