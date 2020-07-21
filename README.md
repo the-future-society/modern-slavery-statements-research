@@ -30,7 +30,7 @@ git clone https://github.com/the-future-society/modern-slavery-statements-resear
 ```
 
 #### Option 1 - notebook
-Read and then copy the contents of [this notebook](https://github.com/the-future-society/modern-slavery-statements-research/blob/master/notebooks/Tutorial%20-%20Download%20Corpus.ipynb) that are compatible with your needs, paste it into your text editor and save it using .py extension. Then launch the script in Terminal using
+Read and then copy the contents of [this notebook](https://github.com/the-future-society/modern-slavery-statements-research/blob/master/notebooks/Tutorial%20-%20Download%20Corpus.ipynb) that are compatible with your needs, paste it into your text editor and save it using .py extension. Then launch the script in Terminal by running
 ```
 python name_of_the_created_file.py
 ```
