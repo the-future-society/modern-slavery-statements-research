@@ -83,3 +83,4 @@ The Future Society. (2020) Modern Slavery Statements Research. Retrieved from ht
 Add Colab notebooks here.
 
 - Rey Farhan's [initial text data exploration and assumptions' check](https://colab.research.google.com/drive/1Xk3TZ-30CfNmUxxiDRrWh9S3nR74pZlj?usp=sharing).
+- Parth Shah's [exploration of knowledge graphs based on subject-object syntactic relations](https://colab.research.google.com/drive/1Nig3YyHy8MEx5a1gmw_Hj95uYDAO30DV?usp=sharing)
