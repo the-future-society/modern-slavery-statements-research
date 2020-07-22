@@ -25,7 +25,7 @@ It's recommended that you use a virtual environment such as [virtualenv](https:/
 
 
 #### Option 1 - notebook
-Copy [this notebook](https://github.com/the-future-society/modern-slavery-statements-research/blob/master/notebooks/Tutorial%20-%20Download%20Corpus.ipynb) and follow the tutorial.
+Copy [this notebook](https://github.com/the-future-society/modern-slavery-statements-research/blob/master/notebooks/Tutorial%20-%20Corpus%20Download%20and%20Word%20Count%20Visualization.ipynb) and follow the tutorial.
 
 The linked notebook above also shows you how to plot the word count distribution of all the documents downloaded.
 
