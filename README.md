@@ -30,13 +30,15 @@ git clone https://github.com/the-future-society/modern-slavery-statements-resear
 ```
 
 #### Option 1 - notebook
-Copy [this notebook](https://github.com/the-future-society/modern-slavery-statements-research/blob/master/notebooks/Tutorial%20-%20Download%20Corpus.ipynb) and follow the instructions there.
-
+Read and then copy the contents of [this notebook](https://github.com/the-future-society/modern-slavery-statements-research/blob/master/notebooks/Tutorial%20-%20Download%20Corpus.ipynb) that are compatible with your needs, paste it into your text editor and save it using .py extension. Then launch the script in Terminal by running
+```
+python name_of_the_created_file.py
+```
 #### Option 2 - CLI
 
-Navigate to the project folder.
+Navigate to the project folder using the following command
 ```
-modern-slavery-statements-research/modern_slavery_statements_research
+cd modern-slavery-statements-research/modern_slavery_statements_research
 ```
 
 If you've set up your modern slavery project related [AWS CLI](https://aws.amazon.com/cli/) credentials as default you can simply run
@@ -83,3 +85,6 @@ The Future Society. (2020) Modern Slavery Statements Research. Retrieved from ht
 Add Colab notebooks here.
 
 - Rey Farhan's [initial text data exploration and assumptions' check](https://colab.research.google.com/drive/1Xk3TZ-30CfNmUxxiDRrWh9S3nR74pZlj?usp=sharing).
+- Parth Shah's [exploration of knowledge graphs based on subject-object syntactic relations](https://colab.research.google.com/drive/1Nig3YyHy8MEx5a1gmw_Hj95uYDAO30DV?usp=sharing)
+
+.
