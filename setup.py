@@ -27,7 +27,7 @@ REQUIRED = [
 
 ENTRY_POINTS =  {
         "console_scripts": [
-            "download-statements = modern_slavery_statements_research.download_corpus:download",
+            "download-statements = modern_slavery_statements_research.download_corpus:main"
         ]
     }
 
@@ -102,7 +102,7 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
+    packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*", "notebooks", "**scraper_run*"]),
     install_requires=REQUIRED,
     include_package_data=True,
     license='MIT',
