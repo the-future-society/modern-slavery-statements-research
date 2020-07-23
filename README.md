@@ -14,45 +14,49 @@ In 2018, [the Global Slavery Index](https://www.globalslaveryindex.org/2018/find
 By sharing your analysis and contributing to this repository you help the global community to hold multi-national corporations accountable for how they treat their workforce and suppliers.
 
 
-## How to access the data?
+### Prerequisites
 
-The data is available in the `modern-slavery-dataset-txt` bucket in AWS S3. The future plans involve releasing the dataset for the general public access.
-
-The bucket contains multiple copies of statements from various scraping runs so the logic is to always pick the latest folder.  The raw documents are found in the `/data/raw_statements/` folder in the `modern-slavery-dataset-raw`  bucket. Metadata is found in `s3://modern-slavery-dataset-raw/data/ms_registry/` following the same logic.
-
-As it's work in progress, at present, if you'd like to work with this data, please send an email to edgar@bravetech.io with a link to your social profile (linkedin, facebook or similar ) and you'll receive IAM user credentials on the first possible instance that would allow you to download and access the data.
+- [Python 3.6+](https://www.python.org/downloads/release/python-3611/) installed on your system
+- If you'd like to use the provided tutorials, you also need access to a [Jupyter notebook](https://jupyter.org/install.html)
 
 ### Quickstart
 
-First clone the repository
-```
-git clone https://github.com/the-future-society/modern-slavery-statements-research
-```
+It's recommended that you use a virtual environment such as [virtualenv](https://virtualenv.pypa.io/en/latest/), [pipenv](https://pipenv-fork.readthedocs.io/en/latest/) or similar.
+
 
 #### Option 1 - notebook
-Read and then copy the contents of [this notebook](https://github.com/the-future-society/modern-slavery-statements-research/blob/master/notebooks/Tutorial%20-%20Download%20Corpus.ipynb) that are compatible with your needs, paste it into your text editor and save it using .py extension. Then launch the script in Terminal by running
-```
-python name_of_the_created_file.py
-```
-#### Option 2 - CLI
+Copy [this notebook](https://github.com/the-future-society/modern-slavery-statements-research/blob/master/notebooks/Tutorial%20-%20Corpus%20Download%20and%20Word%20Count%20Visualization.ipynb) and follow the tutorial.
 
-Navigate to the project folder using the following command
+The linked notebook above also shows you how to plot the word count distribution of all the documents downloaded.
+
+#### Option 2 - command line
+
+Install the package:
 ```
-cd modern-slavery-statements-research/modern_slavery_statements_research
+pip install modern-slavery-statements-research
 ```
+
+Specify your AWS access credentials as `-i` (aws access key id) and `-a` (secret access key) arguments and run (without the curly brackets):
+```
+download-statements -i {aws_access_key_id} -a {aws secret access key}
+```
+The logs printed in the console will tell you the name of the data folder.
+
 
 If you've set up your modern slavery project related [AWS CLI](https://aws.amazon.com/cli/) credentials as default you can simply run
 ```
-python download_corpus.py
+download-statements
 ```
 
-If your modern slavery project credentials are not default you can specify them as arguments.
-```
-python download_corpus.py -i {aws_access_key_id} -a {aws_secret_access_key}
-```
+You can explore more options by running `download-statements --help`
 
-You can explore more options by running `python download_corpus.py --help`
+## How to get data access?
 
+The data is available in the `modern-slavery-dataset-txt` bucket in AWS S3. The future plans involve releasing the dataset for the general public access.
+
+The bucket contains multiple copies of statements from various scraping runs so the logic is to always pick the latest folder. The provided scripts and examples take care of this automatically. The raw documents are found in the `/data/raw_statements/` folder in the `modern-slavery-dataset-raw`  bucket. Metadata is found in `s3://modern-slavery-dataset-raw/data/ms_registry/` following the same logic.
+
+As it's work in progress, at present, if you'd like to work with this data, please send an email to edgar@bravetech.io with a link to your social profile (linkedin, facebook or similar ) and you'll receive IAM user credentials on the first possible instance that would allow you to download and access the data.
 
 
 
@@ -82,9 +86,10 @@ The Future Society. (2020) Modern Slavery Statements Research. Retrieved from ht
 
 ## Contributions
 
-Add Colab notebooks here.
+If you'd like to contribute to the research then take a look at any of the issues or get in touch with [Adriana](mailto:adriana.bora@thefuturesociety.org) or [Edgar](mailto:edgar@bravetech.io).
+
+Take a look at colab notebooks based on the modern slavery corpus:
 
 - Rey Farhan's [initial text data exploration and assumptions' check](https://colab.research.google.com/drive/1Xk3TZ-30CfNmUxxiDRrWh9S3nR74pZlj?usp=sharing).
 - Parth Shah's [exploration of knowledge graphs based on subject-object syntactic relations](https://colab.research.google.com/drive/1Nig3YyHy8MEx5a1gmw_Hj95uYDAO30DV?usp=sharing)
 
-.

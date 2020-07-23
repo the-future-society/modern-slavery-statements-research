@@ -18,6 +18,27 @@ logging.basicConfig(level=logging.INFO,
                     format=log_fmt
                     )
 
+def get_arguments():
+    """
+    Parses CLI argumenst
+    Returns: parsed arguments
+    """
+
+    parser = argparse.ArgumentParser(description="Dowloads the latest documents from AWS S3 ")
+    parser.add_argument('-i', type=str, help="Provides the aws access key id", required=False)
+    parser.add_argument('-a', type=str, help="Provides the aws secret access key", required=False)
+    parser.add_argument('-b', type=str, help="Provide filename to bucket name file,"
+                                             "default = modern-slavery-dataset-txt",
+                        default="modern-slavery-dataset-txt", required=False)
+    parser.add_argument('-m', type=str, help="Provides metadata for each file outputed",
+                        default="./metadatas.csv", required=False)
+    parser.add_argument('--only_m', type=bool, help="Whether of not we want to output only metadatas" 
+                                                    "and not all files, default=false",
+                        default=False)
+    args = parser.parse_args()
+
+    return args
+
 
 def get_aws_creds_from_session():
     """
@@ -115,7 +136,6 @@ def download(bucket_name='modern-slavery-dataset-txt', metadata_path='./metadata
     Args: command line arguments
     """
 
-
     if (not aws_access_key_id or not aws_secret_access_key):
         aws_access_key_id, aws_secret_access_key = get_aws_creds_from_session()
 
@@ -173,21 +193,11 @@ def transform(path_to_scraper_run_dir, output_format='pandas_dataframe'):
     df.to_pickle('ms_statements_pd.pkl')
 
 
-if __name__ == '__main__':
-
-
-    parser = argparse.ArgumentParser(description="Dowloads the latest documents from AWS S3 ")
-    parser.add_argument('-i', type=str, help="Provides the aws access key id", required=False)
-    parser.add_argument('-a', type=str, help="Provides the aws secret access key", required=False)
-    parser.add_argument('-b', type=str, help="Provide filename to bucket name file,"
-                                             "default = modern-slavery-dataset-txt", 
-                        default="modern-slavery-dataset-txt", required=False)
-    parser.add_argument('-m', type=str, help="Provides metadata for each file outputed",
-                        default="./metadatas.csv", required=False)
-    parser.add_argument('--only_m', type=bool, help="Whether of not we want to output only metadatas" 
-                                                    "and not all files, default=false",
-                        default=False)
-    args = parser.parse_args()
-
+def main():
+    args = get_arguments()
     download(args.b, args.m, args.only_m, args.i, args.a)
+
+
+if __name__ == '__main__':
+    main()
 
