@@ -101,7 +101,9 @@ def get_latest_folder_name(bucket_name, aws_access_key_id, aws_secret_access_key
     logger.info("Identifying the most recent data folder...")
     files_in_bucket = list(bucket.objects.all())
     sorted_folder_names = sorted([re.sub(r'/.+', '', file.key) for file in files_in_bucket], reverse=True)
-    folder_name = get_first_folder_name(sorted_folder_names)
+    sorted_folder_names_excluding_test_folders = [file for file in sorted_folder_names if "TEST" not in file]
+   
+    folder_name = get_first_folder_name(sorted_folder_names_excluding_test_folders)
     # latest_folder_name = sorted_folder_names[0]
 
     logger.info(f"Storing local data in {folder_name}")
