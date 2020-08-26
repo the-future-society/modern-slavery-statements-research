@@ -18,16 +18,16 @@ URL = 'https://github.com/the-future-society/modern-slavery-statements-research/
 EMAIL = 'edgar@bravetech.io'
 AUTHOR = 'The Future Society'
 REQUIRES_PYTHON = '>=3.6.0'
-VERSION = '0.1.2'
+VERSION = '0.2.0'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    "pandas", "boto3", "tqdm"
+    "boto3"
 ]
 
 ENTRY_POINTS =  {
         "console_scripts": [
-            "download-statements = modern_slavery_statements_research.download_corpus:main"
+            "download-corpus = modern_slavery_statements_research.download_corpus:download_from_s3"
         ]
     }
 
