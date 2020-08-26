@@ -25,9 +25,8 @@ It's recommended that you use a virtual environment such as [virtualenv](https:/
 
 
 #### Option 1 - notebook
-Copy [this notebook](https://github.com/the-future-society/modern-slavery-statements-research/blob/master/notebooks/Tutorial%20-%20Corpus%20Download%20and%20Word%20Count%20Visualization.ipynb) and follow the tutorial.
+Copy [this notebook](https://github.com/the-future-society/modern-slavery-statements-research/blob/DataJams/notebooks/Tutorial%20-%20Download%20Modern%20Slavery%20Corpus.ipynb) and follow the instructions.
 
-The linked notebook above also shows you how to plot the word count distribution of all the documents downloaded.
 
 #### Option 2 - command line
 
@@ -38,25 +37,42 @@ pip install modern-slavery-statements-research
 
 Specify your AWS access credentials as `-i` (aws access key id) and `-a` (secret access key) arguments and run (without the curly brackets):
 ```
-download-statements -i {aws_access_key_id} -a {aws secret access key}
+download-corpus -i {aws_access_key_id} -a {aws secret access key}
 ```
 The logs printed in the console will tell you the name of the data folder.
 
 
 If you've set up your modern slavery project related [AWS CLI](https://aws.amazon.com/cli/) credentials as default you can simply run
 ```
-download-statements
+download-corpus
 ```
 
-You can explore more options by running `download-statements --help`
+You can explore more options by running `download-corpus --help`
 
-## How to get data access?
+## Data Schema
 
-The data is available in the `modern-slavery-dataset-txt` bucket in AWS S3. The future plans involve releasing the dataset for the general public access.
+The dataset includes the following columns:
 
-The bucket contains multiple copies of statements from various scraping runs so the logic is to always pick the latest folder. The provided scripts and examples take care of this automatically. The raw documents are found in the `/data/raw_statements/` folder in the `modern-slavery-dataset-raw`  bucket. Metadata is found in `s3://modern-slavery-dataset-raw/data/ms_registry/` following the same logic.
-
-As it's work in progress, at present, if you'd like to work with this data, please send an email to edgar@bravetech.io with a link to your social profile (linkedin, facebook or similar ) and you'll receive IAM user credentials on the first possible instance that would allow you to download and access the data.
+ <pre>
+Company ID                                    Unique company identifier
+Company                                       Company name
+Is Publisher                                  Whether the company is a publiser 
+Statement ID                                  Unique statement identifier
+URL                                           Original URL where the statement could be found
+Override URL                                  Edited URL
+Companies House Number                        Company's registered number in companieshouse.gov.uk
+Industry                                      Company's main area of activity 
+HQ                                            Country of company's headquarters
+Is Also Covered                               
+UK Modern Slavery Act                         Whether the company is legislated by the UK Modern Slavery Act 
+California Transparency in Supply Chains Act  Whether the company is legislated by the California Transparency in Supply Chains Act 
+Australia Modern Slavery Act                  Whether the company is legislated by the Australia Modern Slavery Act
+Period Covered                                Year that is being reported for 
+Text                                          Extracted statement text
+ </pre>
+ 
+As the corpus is a work in progress, all feedback is welcomed in the Repository issues 
+at present, if you'd like to work with this data, please send an email to edgar@bravetech.io with a link to your social profile (linkedin, facebook or similar ) and you'll receive IAM user credentials on the first possible instance that would allow you to download and access the data.
 
 
 
@@ -68,9 +84,9 @@ If you'd like to get help with domain expertise or technical requirements and im
 
 Over the next few weeks and months, the following improvements are planned to the dataset and the repository:
 
-1. ~~Provide a convenient one-command entry point to the data~~, including download to a pandas dataframe.
-2. Improve the dataset quality by continuously including more documents and improving the data cleaning pipeline.
-3. Provide examples of analysis.
+1. ~~Provide a convenient one-command entry point to the data~~
+2. ~~Improve the dataset quality by continuously including more documents and improving the data cleaning pipeline.~~
+3. ~~Provide examples of analysis.~~
 4. Provide manually annotaded labels for a subset of the corpus to enable analyses using supervised methods.
 5. Open source the data and research for public access. 
 
@@ -78,7 +94,7 @@ Over the next few weeks and months, the following improvements are planned to th
 
 ## Citation
 
-If you intend to share any form of public research and analysis based on the data from this repository and the `modern-slavery-dataset-raw` and `modern-slavery-dataset-txt` buckets in AWS S3, then please include the following citation to your publication:
+If you intend to share any form of public research and analysis based on the data from this repository and the `modern-slavery-dataset` bucket in AWS S3, then please include the following citation to your publication:
 
 
 The Future Society. (2020) Modern Slavery Statements Research. Retrieved from https://github.com/the-future-society/modern-slavery-statements-research.
@@ -86,7 +102,9 @@ The Future Society. (2020) Modern Slavery Statements Research. Retrieved from ht
 
 ## Contributions
 
-If you'd like to contribute to the research then take a look at any of the issues or get in touch with [Adriana](mailto:adriana.bora@thefuturesociety.org) or [Edgar](mailto:edgar@bravetech.io).
+If you'd like to contribute to the research then take a look at any of the [issues](https://github.com/the-future-society/modern-slavery-statements-research/issues) or get in touch with [Adriana](mailto:adriana.bora@thefuturesociety.org) or [Edgar](mailto:edgar@bravetech.io).
+
+
 
 Take a look at colab notebooks based on the modern slavery corpus:
 
