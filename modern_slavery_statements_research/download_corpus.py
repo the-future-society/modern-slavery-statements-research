@@ -107,5 +107,5 @@ def download_from_s3():
             logger.info("No data downloaded due to incorrect credentials. Check download-corpus --help")
 
 if __name__ == '__main__':
-    args = get_arguments()
-    download_from_s3(args.i, args.a, args.json)
+    # args = get_arguments()
+    download_from_s3()
