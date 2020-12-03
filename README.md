@@ -70,7 +70,7 @@ Australia Modern Slavery Act                  Whether the company is legislated 
 Period Covered                                Year that is being reported for 
 Text                                          Extracted statement text
  </pre>
- 
+
 As the corpus is a work in progress, all feedback is welcomed in the Repository issues 
 at present, if you'd like to work with this data, please send an email to edgar@bravetech.io with a link to your social profile (linkedin, facebook or similar ) and you'll receive IAM user credentials on the first possible instance that would allow you to download and access the data.
 
@@ -113,4 +113,5 @@ Take a look at colab notebooks based on the modern slavery corpus:
 - Darin Plutchok's [Clustering Analysis of Modern Slavery data](https://colab.research.google.com/drive/1J1m1Yoy93d5nyfEHCVcBGv-fFH7l9sfG?usp=sharing)
 - Goutham Venkatesh's  [Clustering Analysis of Modern Slavery data](https://colab.research.google.com/drive/1bkM7WEe0_nPCCUCnvDC05g9xxGNtbcmM?usp=sharing)
 - Rey Farhan's [Modern Slavery Statements NLP - Word2Vec w/ Bigrams (rey farhan) v1.2.ipynb](https://colab.research.google.com/drive/1S0EM1LFJ0KppuENMxiALe7ZikYjNhTLP#scrollTo=aWUYZx9KZbKL)
+- Daniel Hilgart's [Exploratory Data Analysis of the hackathon dataset](https://github.com/the-future-society/modern-slavery-statements-research/blob/master/notebooks/EDA.ipynb)
 
